@@ -1,4 +1,58 @@
 
+.big-tab-list {
+  display: inline-flex;
+  flex-direction: row;
+  list-style-type: none;
+  width: 400px;
+  height: 60px;
+  margin: 0;
+  padding: 0;
+}
+
+.big-tab-list li {
+  width: 130px;
+  height: inherit;
+  margin-left: 5px;
+  border-radius: 5px 5px 0 0;
+}
+
+.big-tab-list li:first-child {
+  margin-left: 0;
+}
+
+.big-tab-list li a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  height: inherit;
+  border-radius: inherit;
+  text-decoration: none;
+}
+
+.big-tab-list li a:hover {
+  background-color: #444;
+}
+
+.big-tab-list li a.active-big-tab {
+  background-color: #fff;
+  color: #333;
+}
+
+.big-tab-panel {
+  width: 680px;
+  height: 340px;
+  background-color: #fff;
+  padding: 20px;
+  display: none;
+}
+
+.big-tab-panel.active-big-panel {
+  display: block;
+}
+
 .skinny-tab-list {
   display: inline-flex;
   flex-direction: row;

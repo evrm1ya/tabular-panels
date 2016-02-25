@@ -28,14 +28,18 @@
   <section>
     <h2>Big Tabs</h2>
     <div class='tab-box'>
-      <ul class='big-tab-list'>
-        <li><a href='#big-tab-1'>Tab One</a></li>
-        <li><a href='#big-tab-2'>Tab Two</a></li>
-        <li><a href='#big-tab-3'>Tab Three</a></li>
-      </ul>
-      <div id='big-tab-1' class='big-tab-panel active'>Content One</div>
-      <div id='big-tab-2' class='big-tab-panel'>Content Two</div>
-      <div id='big-tab-3' class='big-tab-panel'>Content Three</div>
+      <div id='big-tab-box-one'>
+        <ul class='big-tab-list'>
+          <li><a data-contentmap='big-tab-1' href='' class='active-big-tab'>Tab One</a></li>
+          <li><a data-contentmap='big-tab-2' href=''>Tab Two</a></li>
+          <li><a data-contentmap='big-tab-3' href=''>Tab Three</a></li>
+        </ul>
+        <div class='big-panel-content-box'>
+          <div id='big-tab-1' class='big-tab-panel active-big-panel'>Content One</div>
+          <div id='big-tab-2' class='big-tab-panel'>Content Two</div>
+          <div id='big-tab-3' class='big-tab-panel'>Content Three</div>
+        </div>
+      </div>
     </div>
   </section>
 </body>
