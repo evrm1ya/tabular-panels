@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tab Panels</title>
+  <link rel='stylesheet' href='styles.css'>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js'></script>
+  <script src='index.js'></script>
+</head>
+<body>
+  <h1>Tab Panels</h1>
+  <section>
+    <h2>Skinny Tabs</h2>
+    <div class='tab-box'>
+      <div id='skinny-tab-box-one'>
+        <ul class='skinny-tab-list'>
+          <li><a data-contentmap='tab-1' href='' class='active-skinny-tab'>Tab One</a></li>
+          <li><a data-contentmap='tab-2' href=''>Tab Two</a></li>
+          <li><a data-contentmap='tab-3' href=''>Tab Three</a></li>
+        </ul>
+        <div class='content-box'>
+          <div id='tab-1' class='skinny-tab-panel active'>Content One</div>
+          <div id='tab-2' class='skinny-tab-panel'>Content Two</div>
+          <div id='tab-3' class='skinny-tab-panel'>Content Three</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h2>Big Tabs</h2>
+    <div class='tab-box'>
+      <ul class='big-tab-list'>
+        <li><a href='#big-tab-1'>Tab One</a></li>
+        <li><a href='#big-tab-2'>Tab Two</a></li>
+        <li><a href='#big-tab-3'>Tab Three</a></li>
+      </ul>
+      <div id='big-tab-1' class='big-tab-panel active'>Content One</div>
+      <div id='big-tab-2' class='big-tab-panel'>Content Two</div>
+      <div id='big-tab-3' class='big-tab-panel'>Content Three</div>
+    </div>
+  </section>
+</body>
+</html>
