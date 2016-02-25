@@ -2,7 +2,11 @@
 $(function() {
   var selectors = {
     tabAndContentContainer: '#skinny-tab-box-one',
-    contentBoxSelector: '.content-box'
+    contentBoxSelector: '.content-box',
+    buttonAttr: 'data-contentmap',
+    activeTabClass: 'active-skinny-tab',
+    activePanelClass: 'active',
+    tabEvent: 'mouseenter'
   };
-  $(document).tabulizr(selectors);
+  $('#skinny-tab-box-one').tabulizr(selectors);
 });

@@ -3,6 +3,7 @@
 (function($) {
   $.fn.tabulizr = function(selectors) {
     'use strict';
+    // selectors for tab box elements
     var tabBoxContainer = selectors.tabAndContentContainer;
     var tabList = selectors.tabList || 'ul';
     var tabListItem = selectors.tabListItem || 'li';
@@ -10,27 +11,34 @@
     var contentBoxSelector = selectors.contentBoxSelector || 'div:first-child';
     var contentBoxContentEle = selectors.contentBoxContentEle || 'div';
 
+    // class names
+    var buttonAttr = selectors.buttonAttr;
+    var tabEvent = selectors.tabEvent || 'click';
+    var activeTabClass = selectors.activeTabClass;
+    var activePanelClass = selectors.activePanelClass;
+
     var $tabBox = $(tabBoxContainer);
     var $skinnyTabList = $(tabBoxContainer + ' ' + tabList);
     var $tabs = $skinnyTabList.find(tabListItem + ' ' + tabListItemClickable);
     var $panelList = $tabBox.find(contentBoxSelector + ' ' + contentBoxContentEle);
+
     $tabs.each(function() {
       let $this = $(this);
-      let $thisContentMap = $this.attr('data-contentmap');
+      let $thisContentMap = $this.attr(buttonAttr);
       let $contentPanel = $('#' + $thisContentMap + '');
-      $this.on('click', function(event) {
+      $this.on(tabEvent, function(event) {
         event.preventDefault();
-        if ($this.hasClass('active-skinny-tab')) {
+        if ($this.hasClass(activeTabClass)) {
           return false;
         }
         $tabs.each(function() {
-          $(this).removeClass('active-skinny-tab');
+          $(this).removeClass(activeTabClass);
         });
         $panelList.each(function() {
-          $(this).removeClass('active');
+          $(this).removeClass(activePanelClass);
         });
-        $this.addClass('active-skinny-tab');
-        $contentPanel.addClass('active');
+        $this.addClass(activeTabClass);
+        $contentPanel.addClass(activePanelClass);
       });
     });
     return $tabs;
@@ -40,7 +48,11 @@
 $(function() {
   var selectors = {
     tabAndContentContainer: '#skinny-tab-box-one',
-    contentBoxSelector: '.content-box'
+    contentBoxSelector: '.content-box',
+    buttonAttr: 'data-contentmap',
+    activeTabClass: 'active-skinny-tab',
+    activePanelClass: 'active',
+    tabEvent: 'mouseenter'
   };
-  $(document).tabulizr(selectors);
+  $('#skinny-tab-box-one').tabulizr(selectors);
 });
